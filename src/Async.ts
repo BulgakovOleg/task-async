@@ -23,7 +23,7 @@ export function getData(): Promise<number[]> {
  */
 export async function catchException(): Promise<string | undefined> {
     try {
-        Promise.reject(new Error('my error'));
+        await Promise.reject(new Error('my error'));
     } catch (err) {
         if (err instanceof Error) {
             return err.message;
